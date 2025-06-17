@@ -1,0 +1,18 @@
+<div class="upload-container">
+  <h2 class="upload-title">📄 DocuChat</h2>
+
+  <label class="custom-file-upload">
+    <input type="file" (change)="onFileSelected($event)" hidden />
+    <span>📤 Seleccionar Archivo</span>
+  </label>
+
+  <div class="file-info" *ngIf="selectedFile">
+    Archivo seleccionado: <strong>{{ selectedFile.name }}</strong>
+  </div>
+
+  <button (click)="uploadFile()" class="upload-button" [disabled]="loading">
+    {{ loading ? 'Subiendo...' : 'Subir Archivo' }}
+  </button>
+
+  <div class="upload-message">{{ message }}</div>
+</div>

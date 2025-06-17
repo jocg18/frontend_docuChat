@@ -1,0 +1,6 @@
+Este es un documento de prueba para diagnosticar el problema de namespace.
+
+Contenido importante:
+- Información relevante para consultas
+- Datos de ejemplo
+- Texto para buscar

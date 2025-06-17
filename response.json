@@ -1,0 +1,27 @@
+{
+  "answer": "Encontr\u00e9 informaci\u00f3n relevante en 1 archivo(s):\n\n\ud83d\uddbc\ufe0f 1 imagen(es) con an\u00e1lisis b\u00e1sico\n\n\n**Resumen por archivo:**\n\n\ud83d\udfe1 **sistema_electrico_planta.pdf** (relevancia: 0.61)\n21 de la facultad de ciencia e ingenier\u00eda de la UNAN-MANAGUA.\nMARCO TEORICO\n2....",
+  "file_summaries": [
+    {
+      "best_score": 0.608552277,
+      "filename": "sistema_electrico_planta.pdf",
+      "matches_count": 8,
+      "metadata_summary": {
+        "analysis_version": "b\u00e1sica",
+        "complexity": "desconocida",
+        "content_type": "general",
+        "routes_count": 0,
+        "symbols_count": 0
+      },
+      "namespace": "unknown",
+      "preview": "21 de la facultad de ciencia e ingenier\u00eda de la UNAN-MANAGUA.\nMARCO TEORICO\n2."
+    }
+  ],
+  "files_found": 1,
+  "metadata": {
+    "analysis_type": "enhanced_general",
+    "suggestion": "Para mejores resultados, especifica un namespace o usa filtros"
+  },
+  "query": "\u00bfDe qu\u00e9 trata este documento?",
+  "total_matches": 8,
+  "type": "general_enhanced_search"
+}

@@ -1,0 +1,6 @@
+<mat-card>
+  <h2>Subir Documento</h2>
+  <input type="file" (change)="onFileSelected($event)" />
+  <button mat-raised-button color="primary" (click)="uploadFile()">Subir</button>
+  <p *ngIf="message">{{ message }}</p>
+</mat-card>

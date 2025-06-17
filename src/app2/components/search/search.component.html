@@ -1,0 +1,10 @@
+<mat-card>
+  <h2>Buscar en documentos</h2>
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Consulta</mat-label>
+    <input matInput [(ngModel)]="queryText" />
+  </mat-form-field>
+  <button mat-raised-button color="accent" (click)="sendQuery()">Buscar</button>
+
+  <app-results [results]="results"></app-results>
+</mat-card>

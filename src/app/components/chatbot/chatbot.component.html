@@ -1,0 +1,16 @@
+<div>
+    <h3>Consulta al Chatbot</h3>
+
+    <mat-form-field appearance="outline" style="width: 100%;">
+        <input matInput [(ngModel)]="question" placeholder="Haz tu pregunta" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="sendQuestion()">Enviar</button>
+
+    <div *ngIf="loading" style="margin-top: 10px;">Consultando...</div>
+
+    <div *ngIf="response" style="margin-top: 20px;">
+        <strong>Respuesta:</strong>
+        <p>{{ response }}</p>
+    </div>
+</div>

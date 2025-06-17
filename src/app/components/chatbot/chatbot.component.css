@@ -1,0 +1,19 @@
+/* src/app/chatbot/chatbot.component.css */
+.chatbot-card {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 16px;
+    }
+    textarea {
+    width: 100%;
+    margin-bottom: 12px;
+    }
+    button {
+    margin-bottom: 12px;
+    }
+    .response pre {
+    white-space: pre-wrap;
+    }
+    .error {
+    color: red;
+}

@@ -1,0 +1,10 @@
+<div *ngIf="results.length === 0" style="margin-top: 1rem;">No hay resultados.</div>
+
+<div *ngFor="let result of results" class="result-card" style="margin-top: 1rem;">
+  <mat-card>
+    <mat-card-content>
+      <p><strong>Texto relevante:</strong> {{result.metadata.text}}</p>
+      <p><strong>Score:</strong> {{result.score | number:'1.2-2'}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

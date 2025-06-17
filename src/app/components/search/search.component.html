@@ -1,0 +1,32 @@
+<div class="search-wrapper">
+  <h2 class="title">
+    <mat-icon class="icon">search</mat-icon>
+    Consultar Documento
+  </h2>
+  
+  <div class="input-group">
+    <input
+      [(ngModel)]="question"
+      placeholder="Escribe tu pregunta..."
+      class="question-input"
+      [disabled]="loading"
+    />
+    <button (click)="askQuestion()" [disabled]="loading || !question.trim()" class="submit-button">
+      Consultar
+    </button>
+  </div>
+
+  <div class="spinner" *ngIf="loading">
+    <mat-spinner diameter="40" color="accent"></mat-spinner>
+  </div>
+
+  <div *ngIf="response && !loading" class="response-card">
+    <h3>Respuesta:</h3>
+    <pre class="response-text">{{ response }}</pre>
+  </div>
+
+  <div *ngIf="message && !loading" class="error-card">
+    <h3>Error:</h3>
+    <p>{{ message }}</p>
+  </div>
+</div>

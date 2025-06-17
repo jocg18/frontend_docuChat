@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    background-color: #0A1828;
+    color: #E0E0E0;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    background: linear-gradient(rgba(10, 24, 40, 0.55), rgba(10, 24, 40, 0.55)),
+        url("assets/images/fondo_tech.png") no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    }
+
+* {
+    box-sizing: border-box;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #178582;
+    margin: 2rem 0;
+}

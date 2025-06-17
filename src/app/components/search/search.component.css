@@ -1,0 +1,89 @@
+    .search-wrapper {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: rgba(10, 24, 40, 0.35); /* fondo azul oscuro traslúcido */
+        border-radius: 20px;
+        text-align: center;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+    .title {
+    color: #d6ab76; /* similar al tono dorado */
+        font-weight: bold;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .input-group {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .question-input {
+        flex: 1 1 300px;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        border: none;
+        font-size: 1rem;
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .submit-button {
+        background-color: #1f8d87;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .submit-button:hover {
+        background-color: #17716c;
+    }
+
+    .spinner {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .response-card,
+    .error-card {
+    background-color: #132736;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+    text-align: left;
+    white-space: pre-wrap;         /* ✅ permite saltos de línea naturales */
+    word-wrap: break-word;         /* ✅ corta palabras largas si es necesario */
+    overflow-wrap: break-word;     /* ✅ por compatibilidad */
+    line-height: 1.5;
+    max-height: 600px;             /* altura máxima con scroll si es necesario */
+    overflow-y: auto;              /* scroll vertical si el contenido es muy largo */
+    }
+    
+    .response-text {
+        font-family: inherit;       /* usar la fuente del parent */
+        white-space: pre-wrap;      /* mantener formato y saltos de línea */
+        word-wrap: break-word;      /* romper palabras largas */
+        margin: 0;                  /* sin márgenes extra */
+        background: none;           /* sin fondo diferente */
+        border: none;               /* sin bordes */
+        padding: 0;                 /* sin padding extra */
+        color: inherit;             /* heredar color del parent */
+        font-size: inherit;         /* heredar tamaño de fuente */
+        overflow-wrap: break-word;  /* romper palabras si es necesario */
+        max-height: none;           /* sin límite de altura para el pre */
+    }
