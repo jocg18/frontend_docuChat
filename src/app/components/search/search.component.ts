@@ -10,6 +10,7 @@ import { FileSessionService } from '../../services/file-session.service';
 import { environment } from 'src/environments/environment';
 
 
+
 @Component({
   selector: 'app-search',
   standalone: true,
