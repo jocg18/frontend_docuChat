@@ -7,7 +7,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { FileSessionService } from '../../services/file-session.service';
-import { environment } from 'src/environment'; // ✅ IMPORT agregado para usar apiUrl
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-search',
