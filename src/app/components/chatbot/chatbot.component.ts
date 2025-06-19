@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { environment } from 'src/environment'; // ✅ IMPORT agregado para usar apiUrl
 
 @Component({
     selector: 'app-search',
@@ -28,27 +29,27 @@ export class ChatbotComponent {
 
     sendQuestion() {
         if (!this.question.trim()) {
-        this.response = 'Por favor escribe una pregunta.';
-        return;
+            this.response = 'Por favor escribe una pregunta.';
+            return;
         }
 
-    this.loading = true;
-    this.message = '';
-    this.response = '';
+        this.loading = true;
+        this.message = '';
+        this.response = '';
 
-    fetch('http://127.0.0.1:3000/api/query', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ query: this.question })
+        fetch(`${environment.apiUrl}/api/query`, { // ✅ USO de environment.apiUrl aquí
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ query: this.question })
         })
         .then(resp => {
             if (resp.ok) return resp.json();
             else throw new Error('Error al hacer la consulta');
         })
         .then(data => {
-            console.log('Respuesta backend:', data);  // Verifica que "data.answer" existe
+            console.log('Respuesta backend:', data);
             this.response = data.answer || 'No se obtuvo respuesta';
         })
         .catch(err => {
