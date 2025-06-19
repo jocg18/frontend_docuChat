@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FileSessionService } from '../../services/file-session.service';
+import { environment } from 'src/environment'; //  agregado para usar apiUrl
 
 @Component({
   selector: 'app-upload',
@@ -37,7 +38,7 @@ export class UploadComponent {
     const formData = new FormData();
     formData.append('file', this.selectedFile);
 
-    fetch('http://127.0.0.1:3000/api/upload', {
+    fetch(`${environment.apiUrl}/api/upload`, {  // ✅ USO de environment.apiUrl aquí
       method: 'POST',
       body: formData
     })
@@ -47,17 +48,15 @@ export class UploadComponent {
         const data = await resp.json();
         console.log('🔍 DEBUG - Respuesta completa del upload:', data);
         this.message = `✅ Archivo "${this.selectedFile?.name}" cargado con éxito.`;
-        
-        // Priorizar namespace sobre file_id para consultas
+
         const namespace = data.file_info?.namespace || data.namespace;
         const fileId = data.file_info?.file_id || data.file_id || data.documentId || data.id;
-        
+
         console.log('🔍 DEBUG - Namespace extraído:', namespace);
         console.log('🔍 DEBUG - File ID extraído:', fileId);
-        
-        // Usar namespace para las consultas (es lo que usa Pinecone)
+
         if (namespace) {
-          this.fileSession.setFileId(namespace);  // Guardamos el namespace como "fileId" para consultas
+          this.fileSession.setFileId(namespace);
           console.log('🔍 DEBUG - Namespace guardado en session:', this.fileSession.getFileId());
           this.message += ` (Namespace: ${namespace})`;
         } else if (fileId) {
