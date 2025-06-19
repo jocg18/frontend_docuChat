@@ -6,6 +6,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FileSessionService } from '../../services/file-session.service';
 import { environment } from 'src/environments/environment';
 
+
 @Component({
   selector: 'app-upload',
   standalone: true,
