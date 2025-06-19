@@ -7,6 +7,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { FileSessionService } from '../../services/file-session.service';
+import { environment } from 'src/environment'; // ✅ IMPORT agregado para usar apiUrl
+
 @Component({
   selector: 'app-search',
   standalone: true,
@@ -53,7 +55,7 @@ export class SearchComponent {
     const payload = { query: this.question, file_id };
     console.log('🔍 DEBUG - Payload enviado:', payload);
 
-    fetch('http://127.0.0.1:3000/api/query', {
+    fetch(`${environment.apiUrl}/api/query`, { // ✅ USO de environment.apiUrl aquí
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -70,7 +72,6 @@ export class SearchComponent {
         
         let response = data.answer || data.response || 'No se obtuvo respuesta';
         
-        // Agregar información adicional si está disponible
         if (data.file_summaries && data.file_summaries.length > 0) {
           const summary = data.file_summaries[0];
           if (summary.preview && !response.includes(summary.preview)) {
@@ -78,7 +79,6 @@ export class SearchComponent {
           }
         }
         
-        // Agregar sugerencia si existe
         if (data.metadata && data.metadata.suggestion) {
           response += '\n\n💡 **Sugerencia:** ' + data.metadata.suggestion;
         }
